@@ -2,42 +2,83 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <metaname="viewport" content="width=device-width, initial-scale=1.0"></metaname>
-        <title> First Project </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Project</title>
         <script src="main.js"></script>
         <link rel="stylesheet" href="default.css">
         <link rel="stylesheet" href="headerStyle.css">
         <link rel="stylesheet" href="details.css">
         <link rel="stylesheet" href="variable.css">
         <link rel="stylesheet" href="footerStyle.css">
-        
     </head>
-    <body>
-        <div class="layout">
+<body class="bodyContainer" class="lightBody">
+    <div class="mainContainer">
             <header>
                 <div class="flex">
-                    <header>Web Topics</header>
+                <h1 class="appTitle">Web Topics</h1>
                     <nav>
-                        <button type="button">🌙 Dark Mood</button>
-                        <button type="button">❤️ Favorite</button>
+                    <button class="btnDark" type="button">
+                        <ion-icon name="moon-outline"></ion-icon> Dark Mode 
+                    </button>
+                    <button class="btnFavorite" type="button">
+                        <ion-icon name="heart-outline"></ion-icon> Favorite 
+                    </button>
                     </nav>
                 </div>
-        
-                <div class="banner">
-                    <p class="p1"><b>Welcome to our Website</b></p>
-                    <p class="p2">We have a new design that's fresh, modren and easy to use</p>
+            <div class="banner"></div>
+            <div class="triangles">
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+            </div>
+            <div class="Welcoming">
+                <p class="p1"><b>Welcome to our Website</b></p>
+                <p class="p2">We have a new design that's fresh, modern and easy to use</p>
+            </div>
+        </header>
+        <main>
+            <div class="searchBar">
+                <form class="searchAction" action="action_page.php">
+                    <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                    <input class="searchSpace" type="text" placeholder="Search the Website..." name="search">
+
+                    <div class="selectors">
+                    <div class="select">
+                    <div class="select-label-container">
+                    <label class="label">Sort By:</label>                                     
+                    <select name="sort_by" class="sortBy">
+                        <option value="" > Default</option>
+                        <option value="rate">Rate (Highest to Low)</option>
+                        <option value="release_date">Release Date</option>
+                    </select></div></div>
+
+                    <div class="select">
+                    <div class="select-label-container">
+                    <label class="label">Filter By:</label>                   
+                    <select name="filter_by" class="filterBy">
+                        <option value="" > Default</option>
+                        <option value="frontend">Front-end Courses</option>
+                        <option value="backend">Back-end Courses</option>
+                    </select></div></div>
                 </div>
-            </header>
+                </form>
+            </div>
+            <h2><b class="foundNumber">"24" Web Topics found</b></h2>
+            <div class="innerContainer">
         
-            <main>
         
+            </div>
         
             </main>
-        
-            <footer>
-                <article>Develop with <ion-icon name="heart"></ion-icon> © 2024</article>
-            </footer>
+            <div class="Favourite">                
             </div>
+        </div>  
 
+
+       <div> <footer>
+            <article>Developed with <ion-icon class="heart" name="heart"></ion-icon> © 2024</article>
+        </footer></div>
+    <!-- Ionicons CDN -->
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" nomodule></script>
     </body>
 </html>
