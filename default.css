@@ -1,0 +1,133 @@
+main{
+    background-color: var(--bg_body);
+    color: var(--body-text);
+}
+body{
+    min-height: calc(100vh);
+
+}
+.bodyContainer{
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.searchBar {
+    display: flex;
+    justify-content: center; /* Center align the search bar */
+    
+}
+
+.searchAction {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 0;
+    border-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    margin: 1rem 2rem 1rem 2rem;
+    border: 0;
+    border-radius: 10px;
+}
+.selectors{
+    margin-left: auto; 
+    display: flex;
+}
+
+.select , select{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 1px solid var(--lines-color);
+    align-items: flex-start;
+    min-width: 160px;
+    width: 100%;
+    padding: 8px;
+}
+.searchAction button {
+    padding-left: 8px;
+    background-color: #fff;
+    border: 0;
+}
+
+.searchAction select {
+    padding: 8px; 
+    border-radius: 4px;
+    background-color: #fff;
+    border-style: hidden; 
+}
+.searchSpace{
+    border: none;
+    background: none;
+    outline: none;
+}
+.label{
+    font-size: 0.7rem;
+    padding-left: 11px;
+}
+h2{
+    padding-left: 2rem;
+}
+.innerContainer{
+    margin: 0rem 2rem 1rem 2rem;
+}
+
+
+
+.innerContainer{
+
+    background-color: var(--bg_body);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1.3rem;
+
+}
+.card{
+    box-sizing: border-box;
+  float: left;
+  text-align: left;
+  border-radius: 16px;
+  cursor: pointer;
+  background-color: var(--bg_default);
+  overflow: hidden;
+  box-shadow: 0 14px 28px var(--lines-color) (0, 0, 0, 0.08),
+    0 10px 10px var(--lines-color) (0, 0, 0, 0.05)
+}
+.courseImage{
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    align-items: center;
+justify-content: center;
+display: flex;
+  
+    }
+
+.courseImage img{
+    width: 100%;
+     height: 100%; 
+    /* height: auto; */
+    object-fit: cover;
+    
+}
+
+.courseInfo{
+    padding: 15px;
+}
+
+.starShap{
+    color: #ff9f43;
+}
+ul{
+    display: flex;
+    list-style: none;
+    padding-top: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline-start: 0px;
+      
+}
+
+li {
+    padding-top: 32px;
+  }

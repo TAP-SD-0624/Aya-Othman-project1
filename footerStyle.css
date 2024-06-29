@@ -1,0 +1,9 @@
+footer{
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+.heart{
+    color: var(--heart-color);
+}

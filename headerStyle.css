@@ -1,0 +1,100 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.appTitle {
+    color: var(--brand-primary);
+    font-size: larger;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+.btnDark, .btnFavorite {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    padding: 3px 8px;
+    background-color: var(--bg_default);
+    border: 0.8px solid var(--body-text);
+    border-radius: 5px;
+    color: var(--body-text); 
+    cursor: pointer;
+}
+
+.btnFavorite:hover{
+background-color: var(--heart-color);
+color: aliceblue;
+border: 0.8px aliceblue;
+ion-icon{
+    color: aliceblue;
+}
+}
+.btnDark:hover{
+    background-color:   #ff9f43;
+    color: aliceblue;
+    border: 0.8px aliceblue;
+    ion-icon{
+        color: aliceblue;
+    }
+}
+
+.btnDark ion-icon, .btnFavorite ion-icon {
+    color: var(--body-text); 
+    display: inline-block;
+    vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.triangles {
+    position: relative;
+    height: 70px;
+    max-height: 120px;
+}
+
+.triangle1, .triangle2 {
+    width: 100%;
+    height: 100%;
+    min-width: 60px;
+}
+
+.triangle1 {
+    clip-path: polygon(0 0, 0 100%, 80% 0);
+    background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+}
+
+.triangle2 {
+    position: absolute;
+    background-color: var(--brand-secondary);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.Welcoming {
+    width: 100%;
+    align-items: center;
+    max-width: 600px; 
+    margin: 0 auto; 
+    text-align: left; 
+    transform: translateY(-1rem);
+
+}
+
+.p1{
+    color: var(--brand-secondary);
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+.p2 {
+    margin: 0;
+}
