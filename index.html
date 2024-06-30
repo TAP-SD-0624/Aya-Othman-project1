@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Project</title>
-    <script src="main.js"></script>
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="headerStyle.css">
     <link rel="stylesheet" href="details.css">
     <link rel="stylesheet" href="variable.css">
     <link rel="stylesheet" href="footerStyle.css">
+    <link rel="stylesheet" href="favourites.css">
 </head>
-<body class="bodyContainer" class="lightBody">
+<body class="lightMode bodyContainer">
     <div class="mainContainer">
         <header>
             <div class="flex">
@@ -20,12 +20,11 @@
                     <button class="btnDark" type="button">
                         <ion-icon name="moon-outline"></ion-icon> <span class="modeText">Dark Mode</span>
                     </button>
-                    <button class="btnFavorite" type="button">
-                        <ion-icon name="heart-outline"></ion-icon> Favorite 
+                    <button class="btnFavourite" type="button">
+                        <ion-icon name="heart-outline"></ion-icon> Favourites
                     </button>
                 </nav>
             </div>
-            <div class="banner"></div>
             <div class="triangles">
                 <div class="triangle2"></div>
                 <div class="triangle1"></div>
@@ -69,10 +68,16 @@
             </div>
         
       </main>
-            <div class="Favourite">                
-            </div>
-        </div>  
+ 
 
+        <div class="favouriteContainer">
+            <h4>
+                My Favourite Topics
+            </h4>
+            <div class="favouriteList">
+
+            </div>
+        </div> </div>
 
        <div> <footer>
             <article>Developed with <ion-icon class="heart" name="heart"></ion-icon> © 2024</article>
@@ -80,5 +85,6 @@
     <!-- Ionicons CDN -->
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" nomodule></script>
+    <script src="main.js"></script>
 </body>
 </html>

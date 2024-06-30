@@ -2,8 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    background-color: var(--bg_default);
+
+}
+header{
+    background-color: var(--bg_default);
 }
 
 .appTitle {
@@ -16,7 +19,7 @@ nav {
     gap: 5px;
 }
 
-.btnDark, .btnFavorite {
+.btnDark, .btnFavourite {
     display: flex;
     align-items: center;
     gap: 5px; 
@@ -28,7 +31,7 @@ nav {
     cursor: pointer;
 }
 
-.btnFavorite:hover{
+.btnFavourite:hover{
 background-color: var(--heart-color);
 color: aliceblue;
 border: 0.8px aliceblue;
@@ -45,7 +48,7 @@ ion-icon{
     }
 }
 
-.btnDark ion-icon, .btnFavorite ion-icon {
+.btnDark ion-icon, .btnFavourite ion-icon {
     color: var(--body-text); 
     display: inline-block;
     vertical-align: middle;
@@ -57,6 +60,7 @@ ion-icon{
     position: relative;
     height: 70px;
     max-height: 120px;
+    background-color: var(--bg_default);
 }
 
 .triangle1, .triangle2 {
@@ -86,6 +90,7 @@ ion-icon{
     margin: 0 auto; 
     text-align: left; 
     transform: translateY(-1rem);
+    background-color: var(--bg_default);
 
 }
 
@@ -97,4 +102,5 @@ ion-icon{
 }
 .p2 {
     margin: 0;
+    color: var(--body-text);
 }

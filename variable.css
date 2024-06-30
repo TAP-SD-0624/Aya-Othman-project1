@@ -10,7 +10,7 @@ font-family: 'Nunito Sans';
 --heart-color: #DC143C;
 
 }
-body.lightMood{
+body.lightMode{
     --brand-primary: #0768AC;
     --brand-secondary: #03C180;
     --bg_default: #FFFFFF;

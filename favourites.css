@@ -1,0 +1,49 @@
+.favouriteContainer{
+    min-height: 200px;
+    width: 100%;
+    display: none;
+    bottom: 0;
+    position: sticky;
+    color: var(--body-text);
+
+}
+
+.favouriteContainer.showFavourite{
+    display: block;
+    flex-direction: column;
+    background-color: var(--bg_default);
+}
+
+.favouriteContainer h4{
+    padding-left: 15px;
+}
+
+.favouriteList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 15px;
+    background-color: var(--bg_default);
+    grid-gap: 1rem;
+}
+
+
+.favUl , .favUl li{
+padding-top: 0;
+}
+
+.favCourseImage{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.favCourseImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
