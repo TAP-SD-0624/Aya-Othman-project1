@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--bg_default);
+    margin-left: 2rem;
+    margin-right: 2rem;
 
 }
 header{
@@ -17,6 +19,7 @@ header{
 nav {
     display: flex;
     gap: 5px;
+
 }
 
 .btnDark, .btnFavourite {
@@ -90,13 +93,12 @@ ion-icon{
     margin: 0 auto; 
     text-align: left; 
     transform: translateY(-1rem);
-    background-color: var(--bg_default);
 
 }
 
 .p1{
     color: var(--brand-secondary);
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
 }

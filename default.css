@@ -1,6 +1,10 @@
 main{
     background-color: var(--bg_body);
     color: var(--body-text);
+    padding: 0;
+}
+.mainContainer {
+    background-color: var(--bg_body);
 }
 body{
     min-height: calc(100vh);
@@ -10,6 +14,7 @@ body{
     display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0;
 }
 .searchBar {
     display: flex;
@@ -131,3 +136,4 @@ ul{
 li {
     padding-top: 32px;
   }
+
