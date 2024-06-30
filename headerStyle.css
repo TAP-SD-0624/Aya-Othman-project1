@@ -90,7 +90,7 @@ ion-icon{
     width: 100%;
     align-items: center;
     max-width: 600px; 
-    margin: 0 auto; 
+    margin: auto; 
     text-align: left; 
     transform: translateY(-1rem);
 
@@ -98,11 +98,17 @@ ion-icon{
 
 .p1{
     color: var(--brand-secondary);
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 0;
     padding: 0;
 }
 .p2 {
     margin: 0;
     color: var(--body-text);
+}
+@media screen and (min-width:360px){
+    .p1{
+        font-size: 1rem;
+    }
 }

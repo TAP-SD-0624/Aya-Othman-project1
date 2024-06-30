@@ -18,25 +18,29 @@ body{
 }
 .searchBar {
     display: flex;
-    justify-content: center; /* Center align the search bar */
+    justify-content: space-between; 
     
 }
 
 .searchAction {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color:var(--bg_default);
     border: 0;
     border-style: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    margin: 1rem 2rem 1rem 2rem;
     border: 0;
     border-radius: 10px;
+    border:  solid var(--lines-color)
+}
+.search{
+    align-items: center;
+    justify-content: center;
 }
 .selectors{
-    margin-left: auto; 
     display: flex;
+    
 }
 
 .select , select{
@@ -48,18 +52,24 @@ body{
     min-width: 160px;
     width: 100%;
     padding: 8px;
+    background-color: var(--bg_default);
+}
+select{
+    border: none;
+    background: none;
 }
 .searchAction button {
     padding-left: 8px;
-    background-color: #fff;
+    background-color: var(--bg_default);
     border: 0;
 }
 
 .searchAction select {
     padding: 8px; 
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--bg_default);
     border-style: hidden; 
+    color: var(--body-text);
 }
 .searchSpace{
     border: none;
@@ -70,6 +80,15 @@ body{
     font-size: 0.7rem;
     padding-left: 11px;
 }
+
+@media screen and (max-width:600px){
+    .searchAction{
+        flex-direction: column;
+    }
+  
+    
+}
+
 h2{
     padding-left: 2rem;
 }

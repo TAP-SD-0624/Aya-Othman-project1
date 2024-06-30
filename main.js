@@ -35,8 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
         favouriteList = topics.filter((item) => item.favourite);
         console.log (data);
         createFavouritesTopicsCards(favouriteList);
+
         console.log(favouriteList);
-        createTopicsCards(data);
+  
+       createTopicsCards(data);
+        createDetailsPage(data);
+
+
         
       });
   });
@@ -105,6 +110,51 @@ const createFavouritesTopicsCards= (fav)=>{
 
      }); 
 }
-/*1. add boolean to each element in jison property e.g. fav= fales as initial value 
-/*2. favourites = [...courses.filter((item) => item.isFavourite)];
-3. do mapping */
+
+const createDetailsPage = (details)=>{
+  const courseBreaf = document.querySelector(".courseBreaf");
+const urlVariable = new URLSearchParams(window.location.search);
+  const cardId = urlVariable.get("CourseId");
+  const cardData = details.find((card) => card.id == cardId);
+  const detailsArea= document.createElement("div");
+  detailsArea.classList.add("card");
+  let cardHTML='';
+cardHTML+=
+`
+    <h4 class="category">${cardData.category}</h4>
+    <h2 class="cousreName">${cardData.topic}</h2>
+    <div class="cousreRate">
+        <ul class="favUl">
+          <li><ion-icon class="starShap" name="star"></ion-icon></li>
+          <li><ion-icon  class="starShap" name="star"></ion-icon></li>
+          <li><ion-icon  class="starShap" name="star"></ion-icon></li>
+          <li><ion-icon  class="starShap" name="star"></ion-icon></li>
+          <li><ion-icon class="starShap"  name="star"></ion-icon></li>
+        </ul>
+    </div>
+    <p class="breaf">${cardData.description}</p>
+
+`
+detailsArea.innerHTML=cardHTML;
+courseBreaf.appendChild(detailsArea);
+}
+(async () => {
+  document.addEventListener("DOMContentLoaded", () => {
+      fetch("topics.json")
+        .then((response) => response.json())
+        .then((data) => {
+          topics=data;       
+          favouriteList = topics.filter((item) => item.favourite);
+          console.log (data);
+          createFavouritesTopicsCards(favouriteList);
+  
+          console.log(favouriteList);
+        createDetailsPage(data);
+   createTopicsCards(data);
+  
+          
+  
+          
+        });
+    });
+  })()
