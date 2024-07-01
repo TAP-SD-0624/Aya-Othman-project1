@@ -8,7 +8,9 @@ font-family: 'Nunito Sans';
 --lines-color: #DDDDDD;
 --body-text: #333333;
 --heart-color: #DC143C;
-
+--bg_courseBreaf:#333333;
+--white:white;
+--black:black;
 }
 body.lightMode{
     --brand-primary: #0768AC;
@@ -17,7 +19,10 @@ body.lightMode{
     --bg_body: #F0F9FF;
     --lines-color: #DDDDDD;
     --body-text: #333333;
-    --heart-color: #DC143C;   
+    --heart-color: #DC143C; 
+    --bg_courseBreaf:#333333;  
+    --white:white;
+    --black:black;
 }
 body.darkMode{
     --brand-primary: #0768ac;
@@ -27,5 +32,8 @@ body.darkMode{
     --lines-color: #000000;
     --body-text: #ededed;
     --heart-color: #dc143c;
+    --bg_courseBreaf:#333333;
+    --white:white;
+    --black:black;
 }
 

@@ -1,12 +1,63 @@
-main{
-    background-color: var(--bg_body);
-    color: var(--body-text);
-    padding: 3%;
-}
-.mainContainer {
-    background-color: var(--bg_body);
-}
-body{
-    min-height: calc(100vh);
-
-}
+.courseBreaf {
+    width: 100%;
+    position: relative;
+    background-color: var(--bg_courseBreaf);
+    gap: 1rem;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .detailsArea {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg_courseBreaf);
+    max-width: 540px;
+    gap: 1rem;
+  }
+  
+  .detailsArea h3, .detailsArea h4, .detailsArea ul{
+      padding: 0;
+      margin: 0;
+  }
+  
+  h4 {
+    color: var(--brand-secondary);
+    background-color: var(--bg_courseBreaf);
+  }
+  
+  .cousreName {
+    color: var(--white);
+    background-color: var(--bg_courseBreaf);
+  }
+  
+  .courseUl {
+    list-style: none;
+    display: flex;
+    padding-top: 0;
+    align-items: center;
+  }
+  
+  .courseUl li {
+    padding-top: 0;
+  }
+  
+  .breaf {
+    color: var(--white);
+    background-color: var(--bg_courseBreaf);
+  }
+  
+  .topOfCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--black);
+    background-color: var(--white);
+    gap: 8px;
+    padding: 5px;
+  }
+  
+  
+  .courseCard{
+      background-color: var(--white);
+  }
