@@ -1,63 +1,98 @@
 .courseBreaf {
-    width: 100%;
-    position: relative;
-    background-color: var(--bg_courseBreaf);
-    gap: 1rem;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .detailsArea {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg_courseBreaf);
-    max-width: 540px;
-    gap: 1rem;
-  }
-  
-  .detailsArea h3, .detailsArea h4, .detailsArea ul{
-      padding: 0;
-      margin: 0;
-  }
-  
-  h4 {
-    color: var(--brand-secondary);
-    background-color: var(--bg_courseBreaf);
-  }
-  
-  .cousreName {
-    color: var(--white);
-    background-color: var(--bg_courseBreaf);
-  }
-  
-  .courseUl {
-    list-style: none;
-    display: flex;
-    padding-top: 0;
-    align-items: center;
-  }
-  
-  .courseUl li {
-    padding-top: 0;
-  }
-  
-  .breaf {
-    color: var(--white);
-    background-color: var(--bg_courseBreaf);
-  }
-  
-  .topOfCard {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    color: var(--black);
+  width: 100%;
+  position: relative;
+  background-color: var(--bg_courseBreaf);
+  gap: 1rem;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.detailsArea {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg_courseBreaf);
+  max-width: 540px;
+  gap: 1rem;
+}
+
+.detailsArea h3, .detailsArea h4, .detailsArea ul{
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+  color: var(--brand-secondary);
+  background-color: var(--bg_courseBreaf);
+}
+
+.cousreName {
+  color: var(--white);
+  background-color: var(--bg_courseBreaf);
+}
+
+.courseUl {
+  list-style: none;
+  display: flex;
+  padding-top: 0;
+  align-items: center;
+}
+
+.courseUl li {
+  padding-top: 0;
+}
+
+.breaf {
+  color: var(--white);
+  background-color: var(--bg_courseBreaf);
+}
+
+.topOfCard {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--black);
+  background-color: var(--white);
+  gap: 8px;
+  padding: 5px;
+}
+
+
+.courseCard{
     background-color: var(--white);
-    gap: 8px;
-    padding: 5px;
-  }
-  
-  
-  .courseCard{
-      background-color: var(--white);
-  }
+}
+
+.CardCourseArea{
+  background-color: var(--white);
+  min-width: 255px;
+  border: 1px solid #dddddd;
+}
+
+.favCourseImage{
+  height: 120px;
+}
+
+.favouriteBtnDecisionContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.favouriteBtnContainer{
+  border: none;
+  background: none;
+  display: flex;
+  padding: 5px;
+  gap:4px;
+  align-items: center;
+  color: var(--white-color);
+  background-color: var(--brand-secondary);
+}
+
+
+.favouriteBtnDecisionContainer p:last-child{
+  font-size: 0.95rem;
+}
+

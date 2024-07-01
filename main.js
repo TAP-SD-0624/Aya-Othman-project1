@@ -102,6 +102,12 @@ const createFavouritesTopicsCards = (fav) => {
   });
 };
 
+const favouriteBtnText = (Favourite) => {
+  Favourite
+  ? "Remove from Favourites List"
+  : "Add to Favourites";
+}
+
 const createDetailsPage = (data) => {
   const urlVariable = new URLSearchParams(window.location.search);
   const cardId = urlVariable.get("CourseId");
@@ -131,7 +137,7 @@ const createDetailsPage = (data) => {
 `;
 
       const CardCourseArea = document.createElement("div");
-      CardCourseArea.classList.add("CarsCourseArea");
+      CardCourseArea.classList.add("CardCourseArea");
       let cardCourseHTML = "";
       cardCourseHTML += `
       <div class="favCourseImage">
@@ -141,6 +147,18 @@ const createDetailsPage = (data) => {
       <div class="topOfCard">
       <h5>${cardData.topic}</h5>by <a href="#">${cardData.name}</a>
       </div>
+    </div>
+    <div class="favouriteBtnDecisionContainer">
+    <p>Interested about this topic?</p>
+    <div class="favouriteBtnContainer">
+    <button class="btnDark" type="button">
+              <span class="addOrRemove">
+              Add to Favourites
+              </span>
+              <ion-icon name="heart-outline"></ion-icon>
+            </button>
+    </div>
+    <p>Unlimited Credits</p>
     </div>
   `;
 
