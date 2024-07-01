@@ -7,7 +7,7 @@ main{
     background-color: var(--bg_body);
 }
 body{
-    min-height: calc(100vh);
+    min-height: 100vh;
 
 }
 .bodyContainer{

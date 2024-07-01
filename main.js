@@ -1,8 +1,9 @@
 const body = document.querySelector("body");
-const btnDark = document.querySelector(".btnDark");
+const btnDark = document.querySelector(".btnDark"); //like this
+//const getBtnDark = ()=>document.querySelector(".btnDark"); //like this
 const modeText = document.querySelector(".modeText");
 const btnFavourite = document.querySelector(".btnFavourite");
-const favouriteContainer = document.querySelector(".favouriteContainer");
+const favouriteContainer = document.querySelector(".favouriteContainer"); //for best parctce it should be a getters rather than variable
 
 let topics = [];
 let favouriteList = [];
@@ -86,14 +87,10 @@ const createFavouritesTopicsCards = (fav) => {
           <li><ion-icon class="starShap"  name="star"></ion-icon></li>
         </ul>
     </div>
-  `;
+  `; //divide to two function one for craete one card and its details and the other for create the list the append as well
     cardCourse.innerHTML = cardHTML;
     favContainer.appendChild(cardCourse);
   });
-};
-
-const favouriteBtnText = (Favourite) => {
-  Favourite ? "Remove from Favourites List" : "Add to Favourites";
 };
 
 const createDetailsPage = (data) => {
@@ -131,13 +128,10 @@ const createDetailsPage = (data) => {
             item.id === cardId ? { ...item, favourite: !item.favourite } : item
           ),
         ];
-
         favouriteList = [...topics.filter((item) => item.favourite)];
         console.log(favouriteList);
         createFavouritesTopicsCards(favouriteList);
         setDataToLocalStorage();
-
-        console.log(favouriteList);
       };
 
       const courseArea = document.querySelector(".courseArea");
@@ -155,7 +149,7 @@ const createDetailsPage = (data) => {
     <div class="favouriteBtnDecisionContainer">
     <p>Interested about this topic?</p>
     <div class="favouriteBtnContainer">
-    <button class="addOrRemove" type="button" data-id="${cardId} >
+    <button class="addOrRemove" type="button" data-id="${cardId} onClick=() => console.log("buttonClicked")} >
               <span class="addOrRemove textOfFavouriteButton">
             ${
               cardData.favourite
@@ -193,7 +187,9 @@ const createDetailsPage = (data) => {
 
         </div>
       `;
+   
       });
+         
 
       const emptyContainer = document.createElement("div");
       emptyContainer.classList.add("emptyContainer");
@@ -207,13 +203,17 @@ const createDetailsPage = (data) => {
       courseBreaf.appendChild(courseArea);
       subTopicsContainer.appendChild(subTopics);
       subTopicsContainer.appendChild(emptyContainer);
+ // Add event listener for the favourite button
+ document
+ .querySelector(".favouriteBtnContainer button")
+ .addEventListener("click", () =>{
 
-      // Add event listener for the favourite button
-      document
-        .querySelector(".favouriteBtnContainer button")
-        .addEventListener("click", () =>
-          handleTheCLickedFavouriteButton(cardId)
-        );
+   handleTheCLickedFavouriteButton(cardId)
+     const text = document.querySelector(".textOfFavouriteButton");
+   text.textContent = cardData.favourite ? "Remove From Favourites" : "Add to Favourites";
+ }
+ );
+     
     }
   }
 };
@@ -236,11 +236,11 @@ const fetchData = async () => {
 };
 
 (async () => {
-  getDataFromLocalStorage();
+  //getDataFromLocalStorage();
   if (topics.length === 0) {
     topics = await fetchData();
     favouriteList = [...topics.filter((item) => item.favourite)];
-    setDataToLocalStorage();
+  //  setDataToLocalStorage(); no need
   }
   createFavouritesTopicsCards(favouriteList);
   console.log(favouriteList);
