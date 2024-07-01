@@ -1,0 +1,12 @@
+main{
+    background-color: var(--bg_body);
+    color: var(--body-text);
+    padding: 3%;
+}
+.mainContainer {
+    background-color: var(--bg_body);
+}
+body{
+    min-height: calc(100vh);
+
+}

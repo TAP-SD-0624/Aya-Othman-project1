@@ -62,7 +62,7 @@ ion-icon{
 .triangles {
     position: relative;
     height: 70px;
-    max-height: 120px;
+    max-height: 100px;
     background-color: var(--bg_default);
 }
 
@@ -105,10 +105,24 @@ ion-icon{
 }
 .p2 {
     margin: 0;
+    font-size: medium;
     color: var(--body-text);
 }
-@media screen and (min-width:360px){
+@media screen and (max-width:600px){
+    
+
     .p1{
         font-size: 1rem;
+    }
+    .p2{
+        font-size: 1rem;
+
+    }
+    .Welcoming{
+        justify-content: center;
+        margin: 1rem;
+    }
+    .triangles{
+        height: 30px;
     }
 }

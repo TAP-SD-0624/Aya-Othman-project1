@@ -1,7 +1,7 @@
 main{
     background-color: var(--bg_body);
     color: var(--body-text);
-    padding: 0;
+    padding: 3%;
 }
 .mainContainer {
     background-color: var(--bg_body);
@@ -16,30 +16,30 @@ body{
   justify-content: space-between;
   margin: 0;
 }
-.searchBar {
-    display: flex;
-    justify-content: space-between; 
-    
-}
 
-.searchAction {
+
+.searchBar {
     display: flex;
     align-items: center;
     background-color:var(--bg_default);
-    border: 0;
-    border-style: none;
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    border: 0;
+    
     border-radius: 10px;
-    border:  solid var(--lines-color)
+    border: 1px solid var(--lines-color);
+    justify-content: space-between;
+    padding: 3px;
+    
 }
-.search{
+form{
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
 }
+
 .selectors{
     display: flex;
+    border-radius: 4px;
     
 }
 
@@ -51,21 +51,24 @@ body{
     align-items: flex-start;
     min-width: 160px;
     width: 100%;
-    padding: 8px;
+
     background-color: var(--bg_default);
+}
+ion-icon{color: var(--body-text);
+
 }
 select{
     border: none;
     background: none;
-}
-.searchAction button {
     padding-left: 8px;
+    color: var(--body-text);
+}
+.searchBar button {
     background-color: var(--bg_default);
     border: 0;
 }
 
-.searchAction select {
-    padding: 8px; 
+.searchBar select {
     border-radius: 4px;
     background-color: var(--bg_default);
     border-style: hidden; 
@@ -75,6 +78,7 @@ select{
     border: none;
     background: none;
     outline: none;
+    padding: 0;
 }
 .label{
     font-size: 0.7rem;
@@ -82,20 +86,20 @@ select{
 }
 
 @media screen and (max-width:600px){
-    .searchAction{
+    
+    .searchBar{
         flex-direction: column;
+        object-fit: fill;
     }
-  
+    .selectors{
+        object-fit: scale-down;
+    }
+    form{
+        justify-content: flex-start;
+        align-items: center;
+    }
     
 }
-
-h2{
-    padding-left: 2rem;
-}
-.innerContainer{
-    margin: 0rem 2rem 1rem 2rem;
-}
-
 
 
 .innerContainer{
