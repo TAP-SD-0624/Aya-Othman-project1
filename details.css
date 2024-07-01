@@ -13,7 +13,6 @@
   flex-direction: column;
   background-color: var(--bg_courseBreaf);
   max-width: 540px;
-  width: 40%;
   gap: 1rem;
 }
 
@@ -105,11 +104,18 @@
   justify-content: center;
   background-color: var(--brand-secondary);
   cursor: pointer;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .favouriteBtnDecisionContainer p:last-child {
   font-size: 0.95rem;
   text-align: center;
+}
+
+.favouriteBtnDecisionContainer p {
+  color: var(--black);
 }
 
 .favouriteBtnDecisionContainer p,
@@ -138,9 +144,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 7px;
+  cursor: pointer;
 }
 
-.emptyContainer{
+.emptyContainer {
   position: relative;
   min-width: 250px;
   background-color: transparent;
@@ -154,16 +161,16 @@
   background-color: var(--bg_body);
 }
 
-.subTopicsContainer{
+.subTopicsContainer {
   background-color: var(--bg_body);
   width: 100%;
   display: flex;
   justify-content: center;
   padding-block: 25px;
-  gap:1rem;
+  gap: 1rem;
 }
 
-.subTopics{
+.subTopics {
   width: 100%;
   max-width: 540px;
   display: flex;
@@ -174,23 +181,24 @@
   background-color: var(--bg_default);
 }
 
-.subTopics div:first-child{
+.subTopics div:first-child {
   padding: 0;
   margin: 0;
 }
 
-
-.subTopic{
-  width: 100%;
+.subTopic {
   padding: 16px;
   border-radius: 6px;
   border-bottom: 1px solid var(--lines-color);
 }
 
-.checkIcon{
+.subTopic span {
+  color: var(--body-text);
+}
+
+.checkIcon {
   color: var(--brand-secondary);
 }
- 
 
 .sub-topics-h4 {
   color: var(--body-text);
@@ -198,12 +206,11 @@
   padding-inline-start: 22px;
 }
 
-.btn{
+.btn {
   border: none;
   background: none;
-  gap:8px;
+  gap: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-

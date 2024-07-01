@@ -7,6 +7,11 @@ const favouriteContainer = document.querySelector(".favouriteContainer");
 let topics = [];
 let favouriteList = [];
 
+const setDataToLocalStorage = () => {
+  localStorage.setItem("coursesList", JSON.stringify(topics));
+  localStorage.setItem("favouritesList", JSON.stringify(favouriteList));
+};
+
 btnDark.addEventListener("click", () => {
   body.classList.contains("dark")
     ? body.classList.toggle("lightMode")
@@ -62,6 +67,7 @@ const createTopicsCards = (data) => {
 
 const createFavouritesTopicsCards = (fav) => {
   const favContainer = document.querySelector(".favouriteList");
+  favContainer.innerHTML = "";
   fav.map((favCourse) => {
     const cardCourse = document.createElement("div");
     cardCourse.classList.add("card");
@@ -117,6 +123,23 @@ const createDetailsPage = (data) => {
     <p class="breaf">${cardData.description}</p>
 
 `;
+
+      const handleTheCLickedFavouriteButton = (cardId) => {
+        cardData.favourite = !cardData.favourite;
+        topics = [
+          ...topics.map((item) =>
+            item.id === cardId ? { ...item, favourite: !item.favourite } : item
+          ),
+        ];
+
+        favouriteList = [...topics.filter((item) => item.favourite)];
+        console.log(favouriteList);
+        createFavouritesTopicsCards(favouriteList);
+        setDataToLocalStorage();
+
+        console.log(favouriteList);
+      };
+
       const courseArea = document.querySelector(".courseArea");
       const CardCourseArea = document.createElement("div");
       CardCourseArea.classList.add("CardCourseArea");
@@ -132,9 +155,8 @@ const createDetailsPage = (data) => {
     <div class="favouriteBtnDecisionContainer">
     <p>Interested about this topic?</p>
     <div class="favouriteBtnContainer">
-    <button class="addOrRemove" type="button"
-    >
-              <span class="addOrRemove">
+    <button class="addOrRemove" type="button" data-id="${cardId} >
+              <span class="addOrRemove textOfFavouriteButton">
             ${
               cardData.favourite
                 ? "Remove from Favourites"
@@ -185,21 +207,43 @@ const createDetailsPage = (data) => {
       courseBreaf.appendChild(courseArea);
       subTopicsContainer.appendChild(subTopics);
       subTopicsContainer.appendChild(emptyContainer);
+
+      // Add event listener for the favourite button
+      document
+        .querySelector(".favouriteBtnContainer button")
+        .addEventListener("click", () =>
+          handleTheCLickedFavouriteButton(cardId)
+        );
     }
   }
 };
+
+const getDataFromLocalStorage = () => {
+  const savedCourses = localStorage.getItem("coursesList");
+  const savedFavourites = localStorage.getItem("favouritesList");
+
+  if (savedCourses) {
+    topics = JSON.parse(savedCourses);
+  }
+  if (savedFavourites) {
+    favouriteList = JSON.parse(savedFavourites);
+  }
+};
+
+const fetchData = async () => {
+  const response = await fetch("topics.json");
+  return await response.json();
+};
+
 (async () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    fetch("topics.json")
-      .then((response) => response.json())
-      .then((data) => {
-        topics = data;
-        favouriteList = topics.filter((item) => item.favourite);
-        console.log(data);
-        createFavouritesTopicsCards(favouriteList);
-        console.log(favouriteList);
-        createDetailsPage(data);
-        createTopicsCards(data);
-      });
-  });
+  getDataFromLocalStorage();
+  if (topics.length === 0) {
+    topics = await fetchData();
+    favouriteList = [...topics.filter((item) => item.favourite)];
+    setDataToLocalStorage();
+  }
+  createFavouritesTopicsCards(favouriteList);
+  console.log(favouriteList);
+  createDetailsPage(topics);
+  createTopicsCards(topics);
 })();
