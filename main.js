@@ -6,22 +6,6 @@ const favouriteContainer = document.querySelector(".favouriteContainer");
 
 let topics = [];
 let favouriteList = [];
-// document.addEventListener("DOMContentLoaded", () => {
-//     fetch("topics.json")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         topics=data;
-//         favouriteList = topics.filter((item) => item.favourite);
-//         console.log (data);
-//         createFavouritesTopicsCards(favouriteList);
-
-//         console.log(favouriteList);
-
-//        createTopicsCards(data);
-//        createDetailsPage(data);
-
-//       });
-//   });
 
 btnDark.addEventListener("click", () => {
   body.classList.contains("dark")
@@ -103,10 +87,8 @@ const createFavouritesTopicsCards = (fav) => {
 };
 
 const favouriteBtnText = (Favourite) => {
-  Favourite
-  ? "Remove from Favourites List"
-  : "Add to Favourites";
-}
+  Favourite ? "Remove from Favourites List" : "Add to Favourites";
+};
 
 const createDetailsPage = (data) => {
   const urlVariable = new URLSearchParams(window.location.search);
@@ -135,38 +117,74 @@ const createDetailsPage = (data) => {
     <p class="breaf">${cardData.description}</p>
 
 `;
-
+      const courseArea = document.querySelector(".courseArea");
       const CardCourseArea = document.createElement("div");
       CardCourseArea.classList.add("CardCourseArea");
       let cardCourseHTML = "";
       cardCourseHTML += `
-      <div class="favCourseImage">
+      <div class="CourseImage">
         <img src="${cardData.image}" alt="${cardData.topic}">
       </div>
-      <div class="favCourseInfo courseCard">
+      <div class="courseCard">
       <div class="topOfCard">
       <h5>${cardData.topic}</h5>by <a href="#">${cardData.name}</a>
       </div>
-    </div>
     <div class="favouriteBtnDecisionContainer">
     <p>Interested about this topic?</p>
     <div class="favouriteBtnContainer">
-    <button class="btnDark" type="button">
+    <button class="addOrRemove" type="button"
+    >
               <span class="addOrRemove">
-              Add to Favourites
+            ${
+              cardData.favourite
+                ? "Remove from Favourites"
+                : "Add to Favourites"
+            }
               </span>
               <ion-icon name="heart-outline"></ion-icon>
             </button>
     </div>
     <p>Unlimited Credits</p>
     </div>
+        </div>
+
   `;
+
+      const subTopicsContainer = document.querySelector(".subTopicsContainer");
+      const subTopics = document.createElement("div");
+      subTopics.classList.add("subTopics");
+      let subTopicsHTML = "";
+
+      subTopicsHTML += `
+      <div class="subTopic">
+        <h4 class="sub-topics-h4">${cardData.topic} Sub Topics</h4>
+      </div>
+    `;
+
+      cardData.subtopics.forEach((subTopic) => {
+        subTopicsHTML += `
+        <div class="subTopic">
+        <button class="btn">
+          <ion-icon class="checkIcon" name="checkmark-circle-outline"></ion-icon>
+          <span>${subTopic}</span>
+          </button>
+
+        </div>
+      `;
+      });
+
+      const emptyContainer = document.createElement("div");
+      emptyContainer.classList.add("emptyContainer");
 
       detailsArea.innerHTML = cardHTML;
       courseBreaf.appendChild(detailsArea);
 
+      subTopics.innerHTML = subTopicsHTML;
       CardCourseArea.innerHTML = cardCourseHTML;
-      courseBreaf.appendChild(CardCourseArea);
+      courseArea.appendChild(CardCourseArea);
+      courseBreaf.appendChild(courseArea);
+      subTopicsContainer.appendChild(subTopics);
+      subTopicsContainer.appendChild(emptyContainer);
     }
   }
 };
